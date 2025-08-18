@@ -1237,6 +1237,60 @@ header.main-header .header-sticky.active .container-fluid::before {
     font-weight: 700;
     text-transform: capitalize;
     text-decoration: underline;
+}
+
+/* Company Values */
+.company-values {
+    padding: 100px 0;
+}
+
+.company-values .section-title {
+    margin-bottom: 60px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--white-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-item .value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.value-item .value-icon i {
+    font-size: 32px;
+    color: var(--white-color);
+}
+
+.value-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.value-item p {
+    color: var(--text-color);
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
     color: var(--accent-color);
     transition: all 0.3s ease-in-out;
 }
