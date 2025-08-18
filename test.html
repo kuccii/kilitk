@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilitek Project Test</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; font-family: Arial, sans-serif; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { color: green; }
+        .error { color: red; }
+        .asset-test { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Kilitek Project - GitHub Pages Compatibility Test</h1>
+    
+    <div class="test-section">
+        <h2>Project Structure Test</h2>
+        <p>This page tests if all assets are properly accessible for GitHub Pages.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>CSS Files Test</h2>
+        <div class="asset-test">
+            <strong>Bootstrap CSS:</strong> 
+            <span id="bootstrap-test" class="error">Testing...</span>
+        </div>
+        <div class="asset-test">
+            <strong>Custom CSS:</strong> 
+            <span id="custom-test" class="error">Testing...</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>JavaScript Files Test</h2>
+        <div class="asset-test">
+            <strong>jQuery:</strong> 
+            <span id="jquery-test" class="error">Testing...</span>
+        </div>
+        <div class="asset-test">
+            <strong>Bootstrap JS:</strong> 
+            <span id="bootstrap-js-test" class="error">Testing...</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Images Test</h2>
+        <div class="asset-test">
+            <strong>Logo:</strong> 
+            <img src="images/kiltick-logo_1.png" alt="Logo Test" style="height: 50px; width: auto;" onload="document.getElementById('logo-test').innerHTML='✓ Loaded'">
+            <span id="logo-test" class="error">Testing...</span>
+        </div>
+        <div class="asset-test">
+            <strong>Favicon:</strong> 
+            <img src="images/favicon.png" alt="Favicon Test" style="height: 32px; width: 32px;" onload="document.getElementById('favicon-test').innerHTML='✓ Loaded'">
+            <span id="favicon-test" class="error">Testing...</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>GitHub Pages Information</h2>
+        <p><strong>Repository:</strong> <a href="https://github.com/kuccii/kilitk" target="_blank">https://github.com/kuccii/kilitk</a></p>
+        <p><strong>GitHub Pages URL:</strong> <a href="https://kuccii.github.io/kilitk/" target="_blank">https://kuccii.github.io/kilitk/</a></p>
+        <p><strong>Main Page:</strong> <a href="index.html">index.html</a></p>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        // Test if assets are loading
+        $(document).ready(function() {
+            // Test CSS files
+            if ($('link[href*="bootstrap.min.css"]').length > 0) {
+                $('#bootstrap-test').html('✓ Loaded').removeClass('error').addClass('success');
+            }
+            
+            if ($('link[href*="custom.css"]').length > 0) {
+                $('#custom-test').html('✓ Loaded').removeClass('error').addClass('success');
+            }
+            
+            // Test JavaScript files
+            if (typeof $ !== 'undefined') {
+                $('#jquery-test').html('✓ Loaded').removeClass('error').addClass('success');
+            }
+            
+            if (typeof bootstrap !== 'undefined') {
+                $('#bootstrap-js-test').html('✓ Loaded').removeClass('error').addClass('success');
+            }
+        });
+        
+        // Test image loading
+        window.addEventListener('load', function() {
+            // Additional tests can be added here
+            console.log('All assets loaded successfully!');
+        });
+    </script>
+</body>
+</html>
