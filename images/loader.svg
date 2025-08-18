@@ -11,10 +11,10 @@
              repeatCount="indefinite"/>
   </circle>
   
-  <!-- Favicon image in center -->
+  <!-- Favicon image perfectly centered -->
   <image href="favicon.png" x="16" y="16" width="32" height="32" preserveAspectRatio="xMidYMid meet"/>
   
-  <!-- Optional: Add a subtle pulse animation to the favicon -->
+  <!-- Subtle pulse animation around the favicon -->
   <circle cx="32" cy="32" r="24" fill="none" stroke="#2196f3" stroke-width="1" opacity="0.2">
     <animate attributeName="r" 
              values="24;28;24" 
