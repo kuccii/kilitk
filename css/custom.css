@@ -744,7 +744,7 @@ header.main-header .header-sticky.active .container-fluid::before {
 
 .hero {
     position: relative;
-    background: url(../images/videoside.jpg);
+    background: url(../images/m/c.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -1291,6 +1291,8 @@ header.main-header .header-sticky.active .container-fluid::before {
     font-size: 14px;
     line-height: 1.6;
 }
+
+.service-footer a {
     color: var(--accent-color);
     transition: all 0.3s ease-in-out;
 }
@@ -1632,7 +1634,7 @@ header.main-header .header-sticky.active .container-fluid::before {
 .intro-video {
     position: relative;
     padding: 500px 0 100px;
-    background: url('../images/videoside.jpg');
+    background: url('../images/m/pixnova-278da2691c783f8b3aff5dce529eb218.jpg');
     background-position: center center;
     background-size: cover;
     overflow: hidden;
@@ -1821,6 +1823,7 @@ header.main-header .header-sticky.active .container-fluid::before {
     line-height: 1.1em;
     font-weight: 600;
     background: linear-gradient(to left, var(--accent-color) 0.16%, var(--dark-color) 99.84%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-stroke: 4px transparent;
     color: var(--secondary-color);
@@ -2462,7 +2465,7 @@ header.main-header .header-sticky.active .container-fluid::before {
 
 .page-header {
     position: relative;
-    background: url('../images/page-header-bg.jpg') no-repeat;
+    background: url('../images/hero-bg.jpg') no-repeat;
     background-position: center center;
     background-size: cover;
     overflow: hidden;
@@ -2679,7 +2682,7 @@ header.main-header .header-sticky.active .container-fluid::before {
 
 .company-experience {
     background-color: var(--primary-color);
-    background-image: url('../images/company-experience-bg.png');
+    background-image: url('../images/company-growth-img.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
