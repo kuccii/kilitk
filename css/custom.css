@@ -2892,7 +2892,7 @@ header.main-header .header-sticky.active .container-fluid::before {
 
 .company-experience {
     background-color: var(--primary-color);
-    background-image: url('../images/company-growth-img.jpg');
+    background-image: url('https://images.pexels.com/photos/1350197/pexels-photo-1350197.jpeg?_gl=1*1ilcj2z*_ga*MTkyNDU0MzEyOC4xNzU3MDkyNDg3*_ga_8JE65Q40S6*czE3NTcwOTI0ODYkbzEkZzEkdDE3NTcwOTM0NzkkajM3JGwwJGgw');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
