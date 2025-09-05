@@ -4,9 +4,40 @@
     var $window = $(window);
     var $body = $('body');
 
-    /* Preloader Effect */
+    /* SUPER-FAST Preloader Effect */
+    let loaderTimeout;
+    let isLoaderHidden = false;
+    
+    // Hide loader after minimum time (500ms) OR when DOM is ready + 200ms
+    function hideLoader() {
+        if (isLoaderHidden) return;
+        isLoaderHidden = true;
+        
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.classList.add('hidden');
+            // Remove from DOM after animation
+            setTimeout(() => {
+                if (preloader.parentNode) {
+                    preloader.parentNode.removeChild(preloader);
+                }
+            }, 300);
+        }
+    }
+    
+    // Hide loader when DOM is ready (much faster than window.load)
+    $(document).ready(function() {
+        // Minimum loader time for smooth UX
+        loaderTimeout = setTimeout(hideLoader, 500);
+    });
+    
+    // Fallback: hide loader after maximum 2 seconds regardless
+    setTimeout(hideLoader, 2000);
+    
+    // Hide loader when critical resources are loaded
     $window.on('load', function() {
-        $(".preloader").fadeOut(600);
+        clearTimeout(loaderTimeout);
+        hideLoader();
     });
 
     /* Sticky Header */
