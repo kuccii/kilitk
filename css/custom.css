@@ -877,6 +877,90 @@ header.main-header .header-sticky.active .container-fluid::before {
     margin-left: 40px;
 }
 
+/* Hero 05 Title Styling */
+.hero-05-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white-color);
+    margin: 0;
+    text-align: center;
+}
+
+.hero-05-title__row {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.hero-05-title__item {
+    font-style: normal;
+    display: inline-block;
+    position: relative;
+}
+
+.hero-05-title__item.title-item-image {
+    margin: 0 1rem;
+    vertical-align: middle;
+}
+
+.hero-05-title__item.title-item-image svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--accent-color);
+    animation: pulse 2s infinite;
+}
+
+.hero-05-title__item:first-child {
+    color: var(--white-color);
+}
+
+.hero-05-title__item:last-child {
+    color: var(--accent-color);
+    font-weight: 800;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments for hero-05-title */
+@media (max-width: 768px) {
+    .hero-05-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-05-title__item.title-item-image svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-05-title {
+        font-size: 2rem;
+    }
+    
+    .hero-05-title__item.title-item-image {
+        margin: 0 0.5rem;
+    }
+    
+    .hero-05-title__item.title-item-image svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
 .export-coaching-box {
     display: flex;
     flex-wrap: wrap;
