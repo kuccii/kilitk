@@ -48,15 +48,18 @@
 /************************************/
 
 :root {
-    --primary-color: #042A2D;
-    --secondary-color: #F2F1ED;
-    --text-color: #8F8F8F;
-    --accent-color: #73ED7C;
-    --dark-color: #019297;
+    --primary-color: #1B4F72;
+    --secondary-color: #F8F9FA;
+    --text-color: #5A6C7D;
+    --accent-color: #2E86AB;
+    --dark-color: #0D4F8C;
     --white-color: #FFFFFF;
-    --divider-color: #DFE1DE;
+    --divider-color: #E3F2FD;
     --dark-divider-color: #FFFFFF33;
-    --error-color: rgb(230, 87, 87);
+    --error-color: #E74C3C;
+    --success-color: #27AE60;
+    --warning-color: #F39C12;
+    --info-color: #3498DB;
     --default-font: "Fustat", sans-serif;
 }
 
