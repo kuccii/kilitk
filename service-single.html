@@ -500,5 +500,227 @@
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
 	<script src="https://demo.awaikenthemes.com/assets/js/theme-panel.js"></script>
+	
+	<!-- Floating Chat Widget -->
+	<div id="chat-widget-container">
+		<!-- Chat Button -->
+		<div id="chat-button" onclick="toggleChat()">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+			  <!-- Gradient definition -->
+			  <defs>
+			    <linearGradient id="kilitekGradient" x1="0" y1="0" x2="1" y2="1">
+			      <stop offset="0%" stop-color="#2E86AB"/>
+			      <stop offset="100%" stop-color="#1CA3EC"/>
+			    </linearGradient>
+			  </defs>
+			  
+			  <!-- Chat bubble with gradient -->
+			  <path d="M12 2c-5 0-9 3.8-9 8.5 0 2.8 1.5 5.2 3.9 6.8l-1.4 4.2 
+			           4.4-2.3c.7.2 1.4.3 2.1.3 5 0 9-3.8 9-8.5S17 2 12 2z"
+			        fill="url(#kilitekGradient)"/>
+			  
+			  <!-- White dots inside -->
+			  <circle cx="9" cy="11" r="1.3" fill="#ffffff"/>
+			  <circle cx="12" cy="11" r="1.3" fill="#ffffff"/>
+			  <circle cx="15" cy="11" r="1.3" fill="#ffffff"/>
+			</svg>
+			<span class="chat-pulse"></span>
+		</div>
+		
+		<!-- Chat Window -->
+		<div id="chat-window" style="display: none;">
+			<div class="chat-header">
+				<h4>Chat with us</h4>
+				<button onclick="toggleChat()" class="chat-close">
+					<i class="fa-solid fa-times"></i>
+				</button>
+			</div>
+			<div class="chat-body">
+				<iframe
+					src="https://www.chatbase.co/chatbot-iframe/nAVnGUSbNdYtXu27gJWT4"
+					width="100%"
+					height="500px"
+					frameborder="0"
+				></iframe>
+			</div>
+		</div>
+	</div>
+	
+	<style>
+		#chat-widget-container {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			z-index: 9999;
+			font-family: 'Fustat', sans-serif;
+		}
+		
+		#chat-button {
+			width: 60px;
+			height: 60px;
+			background: linear-gradient(135deg, #2E86AB, #1a5f7a);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			box-shadow: 0 4px 20px rgba(46, 134, 171, 0.4);
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		#chat-button:hover {
+			transform: scale(1.1);
+			box-shadow: 0 6px 25px rgba(46, 134, 171, 0.6);
+		}
+		
+		#chat-button i {
+			color: white;
+			font-size: 24px;
+			z-index: 2;
+		}
+		
+		.chat-pulse {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.3);
+			border-radius: 50%;
+			animation: pulse 2s infinite;
+		}
+		
+		@keyframes pulse {
+			0% {
+				transform: scale(1);
+				opacity: 1;
+			}
+			100% {
+				transform: scale(1.4);
+				opacity: 0;
+			}
+		}
+		
+		#chat-window {
+			position: absolute;
+			bottom: 80px;
+			right: 0;
+			width: 350px;
+			height: 600px;
+			background: white;
+			border-radius: 15px;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+			overflow: hidden;
+			animation: slideUp 0.3s ease;
+		}
+		
+		@keyframes slideUp {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		
+		.chat-header {
+			background: linear-gradient(135deg, #2E86AB, #1a5f7a);
+			color: white;
+			padding: 15px 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.chat-header h4 {
+			margin: 0;
+			font-size: 16px;
+			font-weight: 600;
+		}
+		
+		.chat-close {
+			background: none;
+			border: none;
+			color: white;
+			font-size: 18px;
+			cursor: pointer;
+			padding: 5px;
+			border-radius: 50%;
+			transition: background 0.3s ease;
+		}
+		
+		.chat-close:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+		
+		.chat-body {
+			height: calc(100% - 60px);
+		}
+		
+		.chat-body iframe {
+			border: none;
+			width: 100%;
+			height: 100%;
+		}
+		
+		/* Mobile Responsive */
+		@media (max-width: 768px) {
+			#chat-widget-container {
+				bottom: 15px;
+				right: 15px;
+			}
+			
+			#chat-button {
+				width: 55px;
+				height: 55px;
+			}
+			
+			#chat-button i {
+				font-size: 20px;
+			}
+			
+			#chat-window {
+				width: 320px;
+				height: 500px;
+				bottom: 75px;
+			}
+		}
+		
+		@media (max-width: 480px) {
+			#chat-window {
+				width: calc(100vw - 30px);
+				right: -15px;
+				height: 450px;
+			}
+		}
+	</style>
+	
+	<script>
+		function toggleChat() {
+			const chatWindow = document.getElementById('chat-window');
+			const chatButton = document.getElementById('chat-button');
+			
+			if (chatWindow.style.display === 'none') {
+				chatWindow.style.display = 'block';
+				chatButton.style.background = 'linear-gradient(135deg, #1a5f7a, #2E86AB)';
+			} else {
+				chatWindow.style.display = 'none';
+				chatButton.style.background = 'linear-gradient(135deg, #2E86AB, #1a5f7a)';
+			}
+		}
+		
+		// Close chat when clicking outside
+		document.addEventListener('click', function(event) {
+			const chatContainer = document.getElementById('chat-widget-container');
+			const chatWindow = document.getElementById('chat-window');
+			
+			if (!chatContainer.contains(event.target) && chatWindow.style.display === 'block') {
+				chatWindow.style.display = 'none';
+				document.getElementById('chat-button').style.background = 'linear-gradient(135deg, #2E86AB, #1a5f7a)';
+			}
+		});
+	</script>
 </body>
 </html>
